@@ -26,7 +26,7 @@ const resetIndex = (tasks) => {
 };
 
 const editTask = (desc, index) => {
-  tasks[index - 1].description = desc;
+  tasks[index].description = desc;
   addToLocalStorage();
 };
 
@@ -74,7 +74,7 @@ const displayTasks = () => {
       editTask(e.target.value, tsk.index);
       taskDesc.blur();
     });
-    deleteTask.classList.add('fas', 'fa-ellipsis-v');
+    deleteTask.classList.add('fa', 'fa-times');
     deleteTask.addEventListener('click', () => {
       rmvTask(tsk.index);
       resetIndex(mylocal);
